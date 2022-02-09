@@ -1,0 +1,135 @@
+//====================================================================================================
+header {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 50;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #792c85;
+		z-index: 2;
+	}
+}
+.header {
+	&__row {
+		position: relative;
+		@include flexbox();
+		justify-content: space-between;
+		align-items: center;
+		height: 80px;
+		@media (max-width: $md3+px) {
+			height: 50px;
+		}
+	}
+
+	&__column {
+	}
+
+	&__logo {
+		position: relative;
+		z-index: 3;
+	}
+}
+
+.header-logo {
+}
+.header-menu {
+	&__icon {
+		display: none;
+		@media (max-width: $md3+px) {
+			display: block;
+			position: relative;
+			z-index: 3;
+			cursor: pointer;
+			width: 30px;
+			height: 18px;
+			&::before,
+			&::after {
+				content: "";
+				background-color: #fff;
+				position: absolute;
+				width: 100%;
+				height: 2px;
+				left: 0;
+				@include anim(0.3s, 0s);
+			}
+			&::before {
+				top: 0;
+			}
+			span {
+				position: absolute;
+				background-color: #fff;
+				width: 100%;
+				height: 2px;
+				left: 0;
+				top: 8px;
+				@include anim(0.3s, 0s);
+			}
+			&::after {
+				bottom: 0;
+			}
+
+			&.active {
+				&::before {
+					@include rotate(45deg);
+					top: 8px;
+				}
+				&::after {
+					@include rotate(-45deg);
+					bottom: 8px;
+				}
+				span {
+					@include scale(0);
+				}
+			}
+		}
+	}
+
+	&__menu {
+		@media (max-width: $md3+px) {
+			position: fixed;
+			top: -100%;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: #b51886;
+			padding: 100px 10px 20px 10px;
+			@include anim(0.3s, 0s);
+			&.active {
+				top: 0;
+			}
+		}
+	}
+
+	&__list {
+		@include flexbox();
+		position: relative;
+		z-index: 2;
+		li {
+			margin: 0px 0px 0px 20px;
+		}
+		@media (max-width: $md3+px) {
+			display: block;
+			li {
+				margin: 0px 0px 20px 0px;
+			}
+		}
+	}
+
+	&__link {
+		color: #fff;
+		font-size: 16px;
+		text-transform: uppercase;
+		@media (max-width: $md3+px) {
+			font-size: 24px;
+		}
+	}
+}
+//====================================================================================================

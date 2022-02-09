@@ -1,0 +1,35 @@
+.footer {
+	background-color: rgb(161, 48, 214);
+	padding: 20px 0px;
+	&__container {
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__social {
+		a {
+			margin: 0px 15px;
+			img {
+				width: 80px;
+				height: 60px;
+			}
+			&.git-icon {
+				img {
+					width: 50px;
+					height: 50px;
+				}
+			}
+		}
+	}
+
+	p {
+		font-size: 20px;
+		font-weight: 700;
+		color: #000;
+	}
+}
