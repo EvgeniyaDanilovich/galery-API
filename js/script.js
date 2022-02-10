@@ -1,6 +1,12 @@
-const inputValue = document.querySelector('.search__input');
+window.onload = function () {
+	input.focus();
+	input.select();
+}
+
+const input = document.querySelector('.search__input');
 const btn = document.querySelector('.search__btn');
 let tmp = 'search';
+
 
 
 let url = `https://api.unsplash.com/search/photos?query=${tmp}&client_id=yp-8LChNIuFJyZE7IyfPg4KGxoNQGkbZmO11z7avuRE`;
@@ -29,7 +35,7 @@ getData(url);
 
 btn.addEventListener('click', function (e) {
 	e.preventDefault();
-	tmp = inputValue.value;
+	tmp = input.value;
 	url = `https://api.unsplash.com/search/photos?query=${tmp}&client_id=yp-8LChNIuFJyZE7IyfPg4KGxoNQGkbZmO11z7avuRE`;
 	let link = url;
 	getData(link);
