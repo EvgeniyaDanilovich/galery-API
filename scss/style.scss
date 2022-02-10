@@ -67,6 +67,10 @@ body {
 		width: 500px;
 		height: 45px;
 		border-radius: 35px;
+		transition: all 0.2s;
+		&:focus {
+			box-shadow: 0 0 10px 5px rgb(177, 30, 121);
+		}
 	}
 	&__btn {
 		display: block;

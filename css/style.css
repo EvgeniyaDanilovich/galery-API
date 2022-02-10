@@ -382,6 +382,13 @@ position:relative;
   width: 500px;
   height: 45px;
   border-radius: 35px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.search__input:focus {
+  -webkit-box-shadow: 0 0 10px 5px #b11e79;
+          box-shadow: 0 0 10px 5px #b11e79;
 }
 
 .search__btn {
